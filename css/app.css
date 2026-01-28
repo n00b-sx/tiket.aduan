@@ -57,7 +57,7 @@ a.btn, .not-underlined {
 }
 
 th>a, h3>a {
-    color: #133e5e;
+    color: #00753a;
     text-decoration: none;
 }
 
@@ -133,7 +133,7 @@ a:hover {
 .icon-back {
     width: 3.33em;
     height: 1em;
-    fill: #133e5e;
+    fill: #00753a;
 }
 
 .icon-calendar {
@@ -182,7 +182,7 @@ a:hover {
 .icon-close {
     width: 1em;
     height: 1em;
-    fill: #133e5e;
+    fill: #00753a;
 }
 
 .icon-cross {
@@ -500,7 +500,7 @@ a:hover {
 .icon-tick {
     width: 1.38em;
     height: 1em;
-    fill: #133e5e;
+    fill: #00753a;
 }
 
 .icon-tickets {
@@ -957,7 +957,7 @@ a:hover {
     align-items: center;
     height: 40px;
     padding: 0 32px 0 16px;
-    color: #133e5e;
+    color: #00753a;
     white-space: pre;
 }
 
@@ -1155,7 +1155,7 @@ a:hover {
     box-sizing: content-box;
     font-family: Tahoma, sans-serif;
     font-size: 14px;
-    color: #133e5e;
+    color: #00753a;
     width: 250px;
     position: absolute;
     left: -100000px;
@@ -1695,7 +1695,7 @@ picture source, picture img {
 }
 
 a {
-    color: #133e5e;
+    color: #00753a;
     transition: color 100ms ease;
 }
 
@@ -1874,7 +1874,7 @@ img:not([src]):not([srcset]) {
 
 .dropdown label, .dropdown-select label {
     cursor: pointer;
-    color: #133e5e;
+    color: #00753a;
     white-space: nowrap;
 }
 
@@ -1883,7 +1883,7 @@ img:not([src]):not([srcset]) {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    color: #133e5e;
+    color: #00753a;
     cursor: pointer;
 }
 
@@ -1999,7 +1999,7 @@ img:not([src]):not([srcset]) {
     align-items: center;
     white-space: nowrap;
     padding: 0 16px;
-    color: #133e5e;
+    color: #00753a;
 }
 
 .dropdown .dropdown-list>li {
@@ -2017,7 +2017,7 @@ img:not([src]):not([srcset]) {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    color: #133e5e;
+    color: #00753a;
 }
 
 .dropdown .dropdown-list>li a {
@@ -2243,16 +2243,16 @@ button {
 
 .btn-transparent {
     background-color: #fff;
-    border: 1px solid #133e5e;
+    border: 1px solid #00753a;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: .1px;
-    color: #133e5e;
+    color: #00753a;
 }
 
 .btn-transparent:hover {
     background-color: #2c70a2;
-    border: 1px solid #133e5e;
+    border: 1px solid #00753a;
     color: #fff;
 }
 
@@ -2274,7 +2274,7 @@ button {
     color: #fff;
     font-weight: 600;
     transition: all 100ms ease;
-    border: 1px solid #133e5e;
+    border: 1px solid #00753a;
 }
 
 .btn-full.inline-flex {
@@ -2282,7 +2282,7 @@ button {
 }
 
 .btn-full:hover {
-    background-color: #133e5e
+    background-color: #00753a
 }
 
 .btn-full.disabled, .btn-full:disabled {
@@ -2321,7 +2321,7 @@ button {
 }
 
 .btn--blue-border:hover {
-    border-color: #133e5e;
+    border-color: #00753a;
     background-color: #2c70a2 !important;
     color: #fff;
 }
@@ -2478,7 +2478,7 @@ input::-ms-clear {
 .form-group label {
     display: block;
     margin-bottom: 4px;
-    color: #133e5e;
+    color: #00753a;
 }
 
 .isError > label {
@@ -2517,7 +2517,7 @@ input::-ms-clear {
     letter-spacing: .1px;
     -webkit-appearance: none;
     outline: none;
-    color: #133e5e;
+    color: #00753a;
     transition: all 100ms ease;
 }
 
@@ -2955,7 +2955,7 @@ input::-ms-clear {
     border-radius: 2px;
     background: #fff;
     border-radius: 50%;
-    border: 1px solid #133e5e;
+    border: 1px solid #00753a;
 }
 
 .radio-custom [type='radio']:checked+label:after, .radio-custom [type='radio']:not(:checked)+label:after {
@@ -2966,7 +2966,7 @@ input::-ms-clear {
     top: 4px;
     left: 4px;
     transition: all .2s ease;
-    background-color: #133e5e;
+    background-color: #00753a;
     border-radius: 50%;
 }
 
@@ -4003,9 +4003,9 @@ input::-ms-clear {
 }
 
 .filters__listing .btn.is-selected {
-    border-color: #133e5e;
+    border-color: #00753a;
     box-shadow: 0 2px 8px 0 rgba(38, 40, 42, 0.1);
-    background-color: #133e5e;
+    background-color: #00753a;
     color: #fff;
 }
 
@@ -4039,7 +4039,7 @@ input::-ms-clear {
 .filters__listing .btn.is-bookmarks {
     background-color: #f0fff4 !important;
     border: 1px solid #247e53;
-    color: #133e5e;
+    color: #00753a;
 }
 
 .filters__listing .btn.is-bookmarks:hover {
@@ -4894,7 +4894,7 @@ p.rate {
 }
 
 .ticket__body_block .block--checkboxs .checkbox-custom .dropdown-select>span, .ticket__body_block .block--checkboxs .checkbox-custom .dropdown-select li {
-    color: #133e5e;
+    color: #00753a;
     transition: all 100ms ease;
 }
 
@@ -5064,7 +5064,7 @@ p.rate {
 }
 
 .ticket__params .params--bar a:hover {
-    color: #133e5e;
+    color: #00753a;
 }
 
 .ticket__params .params--bar a svg {
@@ -5175,7 +5175,7 @@ p.rate {
 }
 
 .ticket__params .params--block .row .title {
-    color: #133e5e;
+    color: #00753a;
     -ms-flex-negative: 0;
     flex-shrink: 0;
 }
@@ -5593,7 +5593,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
 
 .param.calendar label {
     margin-bottom: 4px;
-    color: #133e5e;
+    color: #00753a;
     margin-right: 8px;
 }
 
@@ -5688,7 +5688,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
 .param.calendar .calendar--value .close svg {
     width: 10px;
     height: 10px;
-    fill: #133e5e;
+    fill: #00753a;
     transition: all 100ms ease;
 }
 
@@ -10022,7 +10022,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
 }
 
 .main-menu {
-    background-color: #133e5e;
+    background-color: #00753a;
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -10142,7 +10142,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
         left: 72px;
         top: 0;
         z-index: 10;
-        background-color: #133e5e;
+        background-color: #00753a;
     }
     .main-menu.is-toggled .listitem__menu .listitem__caption, .main-menu.is-toggled .listitem__menu .submenu__listitem {
         padding-left: 40px
@@ -10160,7 +10160,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
         opacity: 1
     }
     .main-menu.is-toggled .listitem:hover .listitem__icon {
-        /* background-color: #133e5e; */
+        /* background-color: #00753a; */
     }
     .main-menu.is-toggled .listitem__menu .submenu__listitem:hover {
         background-color: rgba(255, 255, 255, 0.1)
@@ -10741,7 +10741,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
 }
 
 .header .profile__user .profile__menu .profile--logout a:hover {
-    background-color: #133e5e
+    background-color: #00753a
 }
 
 .header .profile__user .profile__menu .profile--logout a .icon-log-out {
@@ -10774,7 +10774,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #133e5e;
+    color: #00753a;
     background-color: #9eb1be;
     font-weight: 700;
 }
@@ -10923,7 +10923,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
     .header .header__mobile {
         display: -ms-flexbox;
         display: flex;
-        background-color: #133e5e;
+        background-color: #00753a;
         z-index: 1;
     }
     .header .header__right {
@@ -11438,7 +11438,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
     width: 100%;
     min-height: 100vh;
     font-family: "Lato", Arial, sans-serif;
-    color: #133e5e;
+    color: #00753a;
     font-size: 14px;
     font-weight: 400;
     font-style: normal;
@@ -13237,7 +13237,7 @@ sub {
 }
 
 .radio-custom [type='radio']:checked+label {
-    color: #133e5e!important
+    color: #00753a!important
 }
 
 .note__link > a {
@@ -13496,7 +13496,7 @@ sub {
     padding: 0;
     border: none;
     background: inherit;
-    color: #133e5e;
+    color: #00753a;
     transition: color 250ms ease;
     text-decoration: underline;
     font-size: inherit;
@@ -13717,7 +13717,7 @@ sub {
     background: #2c70a2;
     color: #ffffff;
     fill: #ffffff;
-    border-color: #133e5e;
+    border-color: #00753a;
 }
 
 /* start speeding up all transitions */
@@ -13815,7 +13815,7 @@ label .icon-person,
 }
 .dropdown:not(.right):hover,
 .dropdown-select:not(.right):hover {
-    border-color: #133e5e;
+    border-color: #00753a;
     background-color: #2c70a2 !important;
     color: #fff;
     transition: all var(--transition-time-pri) ease;
@@ -13889,7 +13889,7 @@ label .icon-person,
 .selectize-control:not(.read-write) .selectize-input:hover,
 .selectize-control:not(.read-write) .selectize-input:focus-visible {
     color: #ffffff;
-    border-color: #133e5e;
+    border-color: #00753a;
     background-color: #2c70a2 !important;
 }
 .selectize-control .selectize-input:hover::after,
@@ -13909,7 +13909,7 @@ label .icon-person,
 .selectize-control.read-write .selectize-input:not(.focus).dropdown-active:hover {
     /* have to have this one as extra to ensure it overwrites app.css */
     color: #ffffff;
-    border-color: #133e5e;
+    border-color: #00753a;
     background-color: #2c70a2 !important;
 }
 
@@ -14028,7 +14028,7 @@ Note added attempt at overriding all headers in the same way, with more specific
     vertical-align: middle;
 }
 .article__detalies_list .dropdown-select.right:hover {
-    border-color: #133e5e;
+    border-color: #00753a;
     background-color: #2c70a2 !important;
     color: #fff;
     transition: all var(--transition-time-pri) ease;
@@ -14256,7 +14256,7 @@ Note added attempt at overriding all headers in the same way, with more specific
     color: #6b7480;
 
     border-radius: 3px;
-    /*color: #133e5e;*/ /* Uncomment this, if you prefer the collaborator colors to be darker. */
+    /*color: #00753a;*/ /* Uncomment this, if you prefer the collaborator colors to be darker. */
     box-shadow: inset 2px 1px 2px #f3f4f4, inset -2px -1px 2px #f3f4f4;
     border: none;
     padding: 0 9px 0 12px !important;
@@ -14283,7 +14283,7 @@ Note added attempt at overriding all headers in the same way, with more specific
 .removable-list-item .close .icon {
     width: 8px;
     height: 8px;
-    fill: #133e5e;
+    fill: #00753a;
 }
 .removable-list-item .close:hover {
     opacity: 1;
@@ -15037,7 +15037,7 @@ a.close {
     color: #fff;
     font-weight: 600;
     transition: all 100ms ease;
-    border: 1px solid #133e5e;
+    border: 1px solid #00753a;
     display: inline;
     padding: 2px 12px;
     height:25px;

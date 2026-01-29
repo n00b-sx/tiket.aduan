@@ -57,7 +57,7 @@ a.btn, .not-underlined {
 }
 
 th>a, h3>a {
-    color: #00753a;
+    color: #133e5e;
     text-decoration: none;
 }
 
@@ -133,7 +133,7 @@ a:hover {
 .icon-back {
     width: 3.33em;
     height: 1em;
-    fill: #00753a;
+    fill: #133e5e;
 }
 
 .icon-calendar {
@@ -182,7 +182,7 @@ a:hover {
 .icon-close {
     width: 1em;
     height: 1em;
-    fill: #00753a;
+    fill: #133e5e;
 }
 
 .icon-cross {
@@ -500,7 +500,7 @@ a:hover {
 .icon-tick {
     width: 1.38em;
     height: 1em;
-    fill: #00753a;
+    fill: #133e5e;
 }
 
 .icon-tickets {
@@ -673,7 +673,16 @@ a:hover {
 }
 
 .selectize-control.multi .selectize-input.has-items {
-    padding: 6px 8px 3px
+    padding: 6px 8px 3px;
+    /* Additional handling for multi-line results */
+    min-height: 40px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.selectize-control.multi .selectize-input.has-items::after {
+    /* make sure arrow remains on the far right with multi-lines*/
+    margin-left: auto;
 }
 
 .selectize-input.full {
@@ -957,7 +966,7 @@ a:hover {
     align-items: center;
     height: 40px;
     padding: 0 32px 0 16px;
-    color: #00753a;
+    color: #133e5e;
     white-space: pre;
 }
 
@@ -1155,7 +1164,7 @@ a:hover {
     box-sizing: content-box;
     font-family: Tahoma, sans-serif;
     font-size: 14px;
-    color: #00753a;
+    color: #133e5e;
     width: 250px;
     position: absolute;
     left: -100000px;
@@ -1695,7 +1704,7 @@ picture source, picture img {
 }
 
 a {
-    color: #00753a;
+    color: #133e5e;
     transition: color 100ms ease;
 }
 
@@ -1874,7 +1883,7 @@ img:not([src]):not([srcset]) {
 
 .dropdown label, .dropdown-select label {
     cursor: pointer;
-    color: #00753a;
+    color: #133e5e;
     white-space: nowrap;
 }
 
@@ -1883,7 +1892,7 @@ img:not([src]):not([srcset]) {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    color: #00753a;
+    color: #133e5e;
     cursor: pointer;
 }
 
@@ -1999,7 +2008,7 @@ img:not([src]):not([srcset]) {
     align-items: center;
     white-space: nowrap;
     padding: 0 16px;
-    color: #00753a;
+    color: #133e5e;
 }
 
 .dropdown .dropdown-list>li {
@@ -2017,7 +2026,7 @@ img:not([src]):not([srcset]) {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    color: #00753a;
+    color: #133e5e;
 }
 
 .dropdown .dropdown-list>li a {
@@ -2243,16 +2252,16 @@ button {
 
 .btn-transparent {
     background-color: #fff;
-    border: 1px solid #00753a;
+    border: 1px solid #133e5e;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: .1px;
-    color: #00753a;
+    color: #133e5e;
 }
 
 .btn-transparent:hover {
     background-color: #2c70a2;
-    border: 1px solid #00753a;
+    border: 1px solid #133e5e;
     color: #fff;
 }
 
@@ -2274,7 +2283,7 @@ button {
     color: #fff;
     font-weight: 600;
     transition: all 100ms ease;
-    border: 1px solid #00753a;
+    border: 1px solid #133e5e;
 }
 
 .btn-full.inline-flex {
@@ -2282,7 +2291,7 @@ button {
 }
 
 .btn-full:hover {
-    background-color: #00753a
+    background-color: #133e5e
 }
 
 .btn-full.disabled, .btn-full:disabled {
@@ -2321,7 +2330,7 @@ button {
 }
 
 .btn--blue-border:hover {
-    border-color: #00753a;
+    border-color: #133e5e;
     background-color: #2c70a2 !important;
     color: #fff;
 }
@@ -2478,7 +2487,7 @@ input::-ms-clear {
 .form-group label {
     display: block;
     margin-bottom: 4px;
-    color: #00753a;
+    color: #133e5e;
 }
 
 .isError > label {
@@ -2517,7 +2526,7 @@ input::-ms-clear {
     letter-spacing: .1px;
     -webkit-appearance: none;
     outline: none;
-    color: #00753a;
+    color: #133e5e;
     transition: all 100ms ease;
 }
 
@@ -2894,7 +2903,7 @@ input::-ms-clear {
     transition: all .2s ease;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='8' viewBox='0 0 11 8'%3E%3Cpath fill='%23002D73' fill-rule='evenodd' d='M9.043 0L3.246 5.128 1.623 3.692 0 5.128 3.246 8l7.42-6.564z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: center
+    background-position: 1px 2px;
 }
 
 .checkbox-custom [type='checkbox']:not(:checked)+label:after {
@@ -2914,8 +2923,13 @@ input::-ms-clear {
     background-color: #eee
 }
 
+.checkbox-custom [type='checkbox']:disabled:checked+label {
+    pointer-events: none;
+}
 .checkbox-custom [type='checkbox']:disabled:checked+label:after {
-    background: #aaa
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='8' viewBox='0 0 11 8'%3E%3Cpath fill='%23999' fill-rule='evenodd' d='M9.043 0L3.246 5.128 1.623 3.692 0 5.128 3.246 8l7.42-6.564z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 1px 2px;
 }
 
 .invalid .checkbox-custom [type='checkbox']:not(:checked):required+label:before {
@@ -2955,7 +2969,7 @@ input::-ms-clear {
     border-radius: 2px;
     background: #fff;
     border-radius: 50%;
-    border: 1px solid #00753a;
+    border: 1px solid #133e5e;
 }
 
 .radio-custom [type='radio']:checked+label:after, .radio-custom [type='radio']:not(:checked)+label:after {
@@ -2966,7 +2980,7 @@ input::-ms-clear {
     top: 4px;
     left: 4px;
     transition: all .2s ease;
-    background-color: #00753a;
+    background-color: #133e5e;
     border-radius: 50%;
 }
 
@@ -3603,6 +3617,11 @@ input::-ms-clear {
     padding: 21px 16px
 }
 
+.table tbody td.has-flex-item {
+    /* Extremely weird case, where if a td has a flex item, i.e. container for a "with-label",
+     we need to force it's alignment to top, aso otherwise flex baseline alignment will push all other cells downs */
+    vertical-align: top;
+}
 @media screen and (max-width: 899px) {
     .table tbody td {
         padding: 19px 8px 19px 12px
@@ -4003,9 +4022,9 @@ input::-ms-clear {
 }
 
 .filters__listing .btn.is-selected {
-    border-color: #00753a;
+    border-color: #133e5e;
     box-shadow: 0 2px 8px 0 rgba(38, 40, 42, 0.1);
-    background-color: #00753a;
+    background-color: #133e5e;
     color: #fff;
 }
 
@@ -4039,7 +4058,7 @@ input::-ms-clear {
 .filters__listing .btn.is-bookmarks {
     background-color: #f0fff4 !important;
     border: 1px solid #247e53;
-    color: #00753a;
+    color: #133e5e;
 }
 
 .filters__listing .btn.is-bookmarks:hover {
@@ -4894,7 +4913,7 @@ p.rate {
 }
 
 .ticket__body_block .block--checkboxs .checkbox-custom .dropdown-select>span, .ticket__body_block .block--checkboxs .checkbox-custom .dropdown-select li {
-    color: #00753a;
+    color: #133e5e;
     transition: all 100ms ease;
 }
 
@@ -5064,7 +5083,7 @@ p.rate {
 }
 
 .ticket__params .params--bar a:hover {
-    color: #00753a;
+    color: #133e5e;
 }
 
 .ticket__params .params--bar a svg {
@@ -5175,7 +5194,7 @@ p.rate {
 }
 
 .ticket__params .params--block .row .title {
-    color: #00753a;
+    color: #133e5e;
     -ms-flex-negative: 0;
     flex-shrink: 0;
 }
@@ -5593,7 +5612,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
 
 .param.calendar label {
     margin-bottom: 4px;
-    color: #00753a;
+    color: #133e5e;
     margin-right: 8px;
 }
 
@@ -5688,7 +5707,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
 .param.calendar .calendar--value .close svg {
     width: 10px;
     height: 10px;
-    fill: #00753a;
+    fill: #133e5e;
     transition: all 100ms ease;
 }
 
@@ -6235,7 +6254,6 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
     }
     .main__content.categories .table-wrap {
         margin-right: 0;
-        overflow-x: auto
     }
 }
 
@@ -8774,8 +8792,69 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
     color: #2c70a2;
 }
 
+
+.main__content.settings .settings__theme_preview {
+    width: 364px;
+    box-shadow: 0 2px 8px 0 rgba(38, 40, 42, 0.1);
+    background-color: #fff;
+    padding: 12px 16px;
+    position: absolute;
+    top: 380px;
+    right: 32px
+}
+.main__content.settings .settings__theme_preview iframe {
+    margin-top: 1em;
+    width: 100%;
+    min-height: 400px;
+    aspect-ratio: 9/21;
+    border: 1px solid #ccc;
+    overflow: auto;
+    zoom: 0.5;
+}
+/* START TEMP TEST FOR PREVIEW */
+.settings__theme_preview {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    resize: both;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+}
+
+/* Add these new styles */
+.ui-resizable-handle {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+.ui-resizable-n { top: -5px; left: 50%; cursor: n-resize; }
+.ui-resizable-s { bottom: -5px; left: 50%; cursor: s-resize; }
+.ui-resizable-e { right: -5px; top: 50%; cursor: e-resize; }
+.ui-resizable-w { left: -5px; top: 50%; cursor: w-resize; }
+.ui-resizable-se { right: -5px; bottom: -5px; cursor: se-resize; }
+.ui-resizable-sw { left: -5px; bottom: -5px; cursor: sw-resize; }
+.ui-resizable-nw { left: -5px; top: -5px; cursor: nw-resize; }
+.ui-resizable-ne { right: -5px; top: -5px; cursor: ne-resize; }
+/* END TEMP TEST FOR PREVIEW */
+
 .main__content.settings .settings__form h3 {
     margin-bottom: 24px
+}
+.main__content.settings .settings__form .added-left-offset {
+    margin-left: 40px;
+}
+.main__content.settings .asterix::before,
+.main__content.settings .left-asterix::before {
+    content: '*';
+    color: #e64342;
+}
+.main__content.settings .left-asterix::before {
+    margin-right: 0.5em;
 }
 
 .main__content.settings .settings__form .settings__form_block {
@@ -8785,12 +8864,19 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
 .main__content.settings .settings__form .settings__form_block.language .form-switcher {
     margin-left: 65px
 }
+.main__content.settings .settings__form .settings__form_block.empty-section {
+    border-bottom: none;
+}
 
 .main__content.settings .settings__form .form-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
     align-items: center
+}
+/* Exception for Color/theme settings settings page!!!  as it works better there*/
+.main__content.settings.admin_settings_theme .settings__form .form-group {
+    display: block;
 }
 
 .main__content.settings .settings__form .form-group .form-control.input-tags .selectize-input {
@@ -8867,6 +8953,9 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
     align-items: center;
     margin: 0
 }
+.main__content.settings.admin_settings_theme .settings__form .form-group label {
+    width: 200px;
+}
 
 .main__content.settings .settings__form .form-group label span {
     color: #26282a;
@@ -8884,10 +8973,24 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
     margin-left: 24px
 }
 
-.main__content.settings .settings__form .form-group.short input {
+.main__content.settings .settings__form .form-group.short input,
+.main__content.settings .settings__form .form-group.color input {
     width: 100px
 }
-
+.main__content.settings .settings__form .form-group.color .reset-color {
+    opacity: 0; /* we just want to hide it visually, as to not mess otu the layout shift*/
+    pointer-events: none;
+}
+.main__content.settings .settings__form .form-group.color.is-overridden .reset-color {
+    opacity: 1;
+    pointer-events: auto;
+}
+.main__content.settings .settings__form .form-group .color-example {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #2c70a2;
+    margin-left: 24px;
+}
 .main__content.settings .settings__form .tooltype {
     margin-left: 8px
 }
@@ -8898,7 +9001,15 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
 
 .main__content.settings .settings__form .settings__form_submit {
     margin-top: -24px;
-    padding-left: 224px
+    padding-left: 224px;
+
+    position: sticky;
+    bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #e9f0f3;
+
+    border-top: 1px solid #3333;
 }
 
 .main__content.settings .settings__form .settings__form_submit .btn.test-connection {
@@ -9003,15 +9114,23 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
     resize: none
 }
 
+@media screen and (min-width: 1231px) and (max-width: 1280px) {
+    /* Specific layout issue because of Checking status taking up space - this resolves the weird consequences,
+     but we only want to make it like this in this specific width */
+    .main__content.settings .settings__form .form-group.color .reset-color {
+        position: absolute;
+    }
+}
+
 @media screen and (max-width: 1230px) {
     .main__content.settings {
-        padding: 16px 12px 24px;
+        padding: 16px 12px 24px !important;
         position: relative;
         z-index: 1
     }
     .main__content.settings .settings__status {
         position: static;
-        width: 100%
+        width: 100% !important;
     }
     .main__content.settings .settings__status h3 {
         margin-left: 0;
@@ -10022,7 +10141,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
 }
 
 .main-menu {
-    background-color: #00753a;
+    background-color: #133e5e;
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -10142,7 +10261,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
         left: 72px;
         top: 0;
         z-index: 10;
-        background-color: #00753a;
+        background-color: #133e5e;
     }
     .main-menu.is-toggled .listitem__menu .listitem__caption, .main-menu.is-toggled .listitem__menu .submenu__listitem {
         padding-left: 40px
@@ -10160,7 +10279,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
         opacity: 1
     }
     .main-menu.is-toggled .listitem:hover .listitem__icon {
-        /* background-color: #00753a; */
+        /* background-color: #133e5e; */
     }
     .main-menu.is-toggled .listitem__menu .submenu__listitem:hover {
         background-color: rgba(255, 255, 255, 0.1)
@@ -10741,7 +10860,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
 }
 
 .header .profile__user .profile__menu .profile--logout a:hover {
-    background-color: #00753a
+    background-color: #133e5e
 }
 
 .header .profile__user .profile__menu .profile--logout a .icon-log-out {
@@ -10774,7 +10893,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #00753a;
+    color: #133e5e;
     background-color: #9eb1be;
     font-weight: 700;
 }
@@ -10923,7 +11042,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
     .header .header__mobile {
         display: -ms-flexbox;
         display: flex;
-        background-color: #00753a;
+        background-color: #133e5e;
         z-index: 1;
     }
     .header .header__right {
@@ -11438,7 +11557,7 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
     width: 100%;
     min-height: 100vh;
     font-family: "Lato", Arial, sans-serif;
-    color: #00753a;
+    color: #133e5e;
     font-size: 14px;
     font-weight: 400;
     font-style: normal;
@@ -12157,6 +12276,15 @@ so in this case we rather to it with a scale transform, so it doesn't affect dro
 }
 
 [data-step="5"] .btn-full.save {
+    display: -ms-flexbox;
+    display: flex
+}
+
+.permission-group-stepper[data-step="2"] .btn-full.next {
+    display: none
+}
+
+.permission-group-stepper[data-step="2"] .btn-full.save {
     display: -ms-flexbox;
     display: flex
 }
@@ -13237,7 +13365,7 @@ sub {
 }
 
 .radio-custom [type='radio']:checked+label {
-    color: #00753a!important
+    color: #133e5e!important
 }
 
 .note__link > a {
@@ -13496,7 +13624,7 @@ sub {
     padding: 0;
     border: none;
     background: inherit;
-    color: #00753a;
+    color: #133e5e;
     transition: color 250ms ease;
     text-decoration: underline;
     font-size: inherit;
@@ -13717,7 +13845,7 @@ sub {
     background: #2c70a2;
     color: #ffffff;
     fill: #ffffff;
-    border-color: #00753a;
+    border-color: #133e5e;
 }
 
 /* start speeding up all transitions */
@@ -13815,7 +13943,7 @@ label .icon-person,
 }
 .dropdown:not(.right):hover,
 .dropdown-select:not(.right):hover {
-    border-color: #00753a;
+    border-color: #133e5e;
     background-color: #2c70a2 !important;
     color: #fff;
     transition: all var(--transition-time-pri) ease;
@@ -13889,7 +14017,7 @@ label .icon-person,
 .selectize-control:not(.read-write) .selectize-input:hover,
 .selectize-control:not(.read-write) .selectize-input:focus-visible {
     color: #ffffff;
-    border-color: #00753a;
+    border-color: #133e5e;
     background-color: #2c70a2 !important;
 }
 .selectize-control .selectize-input:hover::after,
@@ -13907,14 +14035,15 @@ label .icon-person,
 }
 .selectize-control.read-write .selectize-input:not(.focus):hover,
 .selectize-control.read-write .selectize-input:not(.focus).dropdown-active:hover {
-    /* have to have this one as extra to ensure it overwrites app.css */
+    /* have to have this one as extra to ensure it overrides app.css */
     color: #ffffff;
-    border-color: #00753a;
+    border-color: #133e5e;
     background-color: #2c70a2 !important;
 }
 
 .selectize-dropdown-content .no-results {
     padding: 5px 10px;
+    white-space: nowrap;
 }
 .checkbox-custom [type="checkbox"] + label:hover::before {
     background: #bdd3e3;
@@ -14028,7 +14157,7 @@ Note added attempt at overriding all headers in the same way, with more specific
     vertical-align: middle;
 }
 .article__detalies_list .dropdown-select.right:hover {
-    border-color: #00753a;
+    border-color: #133e5e;
     background-color: #2c70a2 !important;
     color: #fff;
     transition: all var(--transition-time-pri) ease;
@@ -14256,7 +14385,7 @@ Note added attempt at overriding all headers in the same way, with more specific
     color: #6b7480;
 
     border-radius: 3px;
-    /*color: #00753a;*/ /* Uncomment this, if you prefer the collaborator colors to be darker. */
+    /*color: #133e5e;*/ /* Uncomment this, if you prefer the collaborator colors to be darker. */
     box-shadow: inset 2px 1px 2px #f3f4f4, inset -2px -1px 2px #f3f4f4;
     border: none;
     padding: 0 9px 0 12px !important;
@@ -14283,7 +14412,7 @@ Note added attempt at overriding all headers in the same way, with more specific
 .removable-list-item .close .icon {
     width: 8px;
     height: 8px;
-    fill: #00753a;
+    fill: #133e5e;
 }
 .removable-list-item .close:hover {
     opacity: 1;
@@ -14402,6 +14531,15 @@ Similarly, we have to "undo" the behaviour for any input that is inside the inpu
     padding-bottom: 10px;
     border-bottom: 1px solid #3333;
 }
+.main__content.settings .settings__form .settings__form_block:nth-last-child(2),
+.main__content.settings .settings__form .settings__form_block.is-before-save-button {
+    /* 20px less margin for the last one before save button, to account for it-s extra padding due to stickyness.
+     We're now also letting save button holder make the border, instead of this element.
+     Note: Due to some exception in general page, I had to add a specia lclass for exception there, as it doesn't have the exact same structure.
+    */
+    margin-bottom: 0;
+    border-bottom: none;
+}
 .main__content.settings .settings__form .settings__form_submit {
     margin-top: 0;
 }
@@ -14420,6 +14558,33 @@ Similarly, we have to "undo" the behaviour for any input that is inside the inpu
 .table.ticket-list .dropdown.priority {
     pointer-events: none; /* remove unnecessary hover event */
 }
+/* START admin_settings_theme */
+.main__content.settings .settings__form .toggle-advanced-settings[data-expanded] span[data-type] {
+    display: none;
+}
+.main__content.settings .settings__form .toggle-advanced-settings[data-expanded] span[data-type] svg {
+    margin-left: 1em;
+    width: 8px;
+    height: 8px;
+}
+.main__content.settings .settings__form .toggle-advanced-settings[data-expanded="false"] span[data-type="advanced"] {
+    display: inline;
+}
+.main__content.settings .settings__form .toggle-advanced-settings[data-expanded="true"] span[data-type="basic"] {
+    display: inline;
+}
+.main__content.settings .settings__form .settings__form_block.theme-overrides:not(.empty-section):not(.theme-group-main_brand) {
+    display: none;
+}
+.main__content.settings .settings__form[data-expanded="true"] .settings__form_block.theme-overrides:not(.empty-section):not(.theme-group-main_brand) {
+    display: block;
+}
+.main__content.settings .settings__form[data-expanded="false"] .settings__form_block.theme-overrides.theme-group-main_brand {
+    border-bottom: none;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
 /* START module escalate */
 .right-bar.module-escalate-create .step-bar {
     width: auto !important;
@@ -14538,6 +14703,14 @@ Similarly, we have to "undo" the behaviour for any input that is inside the inpu
         flex: 9999 0 100%; /* massive flex-grow, so it takes all the rest of the space*/
         justify-content: flex-start;
     }
+    /* Some exceptions on admin theme settings page, as it looks better without flexing until mobile size */
+    .main__content.settings.admin_settings_theme .settings__form .form-group.flex-row {
+        display: block;
+    }
+    .main__content.settings.admin_settings_theme .settings__form .form-group.flex-row label {
+        justify-content: flex-end;
+        margin-right: 12px;
+    }
     .main__content.settings.admin_settings_help_desk .settings__form .form-group.flex-row .dropdown-select {
     }
     .main__content.settings.admin_settings_help_desk .settings__form .form-group.flex-row input {
@@ -14563,6 +14736,17 @@ Similarly, we have to "undo" the behaviour for any input that is inside the inpu
     .main__content.settings .settings__form .checkbox-group .checkbox-list .form-group textarea {
         box-sizing: border-box;
         width: calc(100% - 25px);
+    }
+    .main__content.settings.admin_settings_theme .settings__form .form-group > span {
+        margin-left: 12px;
+        margin-right: 0;
+
+    }
+    .main__content.settings.admin_settings_theme .settings__form .form-group.row input {
+        margin-left: 0;
+    }
+    .main__content.settings .settings__form .form-group .color-example {
+        margin-left: 0;
     }
 }
 @media screen and (max-width: 1100px) {
@@ -14763,6 +14947,15 @@ Similarly, we have to "undo" the behaviour for any input that is inside the inpu
         right: auto;
         left: 0;
         max-width: calc(100vw - 30px);
+    }
+
+    /* for Theme settings, we only need to go into a new row on mobile */
+    .main__content.settings.admin_settings_theme .settings__form .form-group.flex-row {
+        display: flex;
+    }
+    .main__content.settings.admin_settings_theme .settings__form .form-group.flex-row label {
+        justify-content: flex-start;
+        margin-right: 0;
     }
 }
 
@@ -15037,7 +15230,7 @@ a.close {
     color: #fff;
     font-weight: 600;
     transition: all 100ms ease;
-    border: 1px solid #00753a;
+    border: 1px solid #133e5e;
     display: inline;
     padding: 2px 12px;
     height:25px;
@@ -15060,3 +15253,22 @@ a.close {
     display: none;
 }
 /*Link Ticket CSS*/
+
+.icon-mute,.icon-unmute{
+    width: 16px;
+    height: 16px;
+    fill: #9c9c9c;
+}
+
+.cus_label{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.filters__listing .btn.is-bookmarks.is-selected {
+    border-width: 1px;
+    background-color: #01773f !important;
+    color: #fff
+}

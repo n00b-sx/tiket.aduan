@@ -1,15 +1,15 @@
 <?php
-// Settings file for HESK 3.6.4
+// Settings file for HESK 3.7.3
 
 // ==> GENERAL
 
 // --> General settings
-$hesk_settings['site_title']='Portal Layanan Tiket Aduan &amp; Helpdesk IAIN Manado';
-$hesk_settings['site_url']='http://localhost';
-$hesk_settings['hesk_title']='Portal Layanan Tiket Aduan &amp; Helpdesk IAIN Manado';
-$hesk_settings['hesk_url']='http://localhost/tiket.aduan';
+$hesk_settings['site_title']='Website';
+$hesk_settings['site_url']='https://www.example.com';
+$hesk_settings['hesk_title']='Help Desk';
+$hesk_settings['hesk_url']='https://www.example.com/helpdesk';
 $hesk_settings['webmaster_mail']='support@example.com';
-$hesk_settings['site_theme']='mytheme';
+$hesk_settings['site_theme']='hesk3';
 $hesk_settings['admin_css']=0;
 $hesk_settings['admin_css_url']='https://www.example.com/hesk-style.css';
 $hesk_settings['admin_js']=0;
@@ -17,18 +17,17 @@ $hesk_settings['admin_js_url']='https://www.example.com/hesk-script.js';
 
 // --> Language settings
 $hesk_settings['can_sel_lang']=0;
-$hesk_settings['language']='Bahasa Indonesia';
+$hesk_settings['language']='English';
 $hesk_settings['languages']=array(
-'English' => array('folder'=>'en','hr'=>'------ Reply above this line ------'),
-'Bahasa Indonesia' => array('folder'=>'id','hr'=>'------ Balas di atas garis ini ------'),
+    'English' => array('folder'=>'en','hr'=>'------ Reply above this line ------'),
 );
 
 // --> Database settings
 $hesk_settings['db_host']='localhost';
-$hesk_settings['db_name']='tiket';
-$hesk_settings['db_user']='root';
-$hesk_settings['db_pass']='';
-$hesk_settings['db_pfix']='tiket_';
+$hesk_settings['db_name']='hesk';
+$hesk_settings['db_user']='test';
+$hesk_settings['db_pass']='test';
+$hesk_settings['db_pfix']='hesk_';
 
 
 // ==> HELP DESK
@@ -62,13 +61,19 @@ $hesk_settings['sequential']=1;
 $hesk_settings['time_worked']=1;
 $hesk_settings['spam_notice']=1;
 $hesk_settings['list_users']=0;
-$hesk_settings['debug_mode']=0;
+$hesk_settings['debug_mode']=1;
 $hesk_settings['short_link']=0;
 $hesk_settings['submitting_wait']=1;
+$hesk_settings['remember_custom_field_values']=1;
+$hesk_settings['disable_autofill_admin']=0;
+$hesk_settings['disable_autofill_customer']=0;
+$hesk_settings['extend_admin']=0;
+$hesk_settings['extend_customer']=0;
 $hesk_settings['select_cat']=0;
 $hesk_settings['select_pri']=0;
 $hesk_settings['cat_show_select']=15;
 $hesk_settings['staff_ticket_formatting']=0;
+$hesk_settings['staff_nicknames']=0;
 
 // --> Barcode
 $hesk_settings['barcode']=array(
@@ -92,14 +97,14 @@ $hesk_settings['customer_accounts_allow_email_changes']=1;
 $hesk_settings['customer_accounts_verify_email_cooldown']=15;
 
 // --> SPAM Prevention
-$hesk_settings['secimg_use']=0;
+$hesk_settings['secimg_use']=1;
 $hesk_settings['secimg_sum']='TMBQL7BN73';
 $hesk_settings['recaptcha_use']=0;
 $hesk_settings['recaptcha_public_key']='';
 $hesk_settings['recaptcha_private_key']='';
 $hesk_settings['question_use']=0;
-$hesk_settings['question_ask']='Which of these is an animal: rocket, phone, monkey';
-$hesk_settings['question_ans']='monkey';
+$hesk_settings['question_ask']='Type <i>PB6YM</i> here to fight SPAM:';
+$hesk_settings['question_ans']='PB6YM';
 
 // --> Security
 $hesk_settings['attempt_limit']=6;
@@ -110,22 +115,22 @@ $hesk_settings['email_view_ticket']=1;
 $hesk_settings['x_frame_opt']=1;
 $hesk_settings['samesite']='Lax';
 $hesk_settings['force_ssl']=0;
-$hesk_settings['url_key']='6uA.rySH8kGDK-JBkJ2MWNueP9';
+$hesk_settings['url_key']='';
 $hesk_settings['require_mfa']=0;
 $hesk_settings['require_mfa_customers']=0;
 $hesk_settings['elevator_duration']='60M';
 
 // --> Attachments
-$hesk_settings['attachments']=array(
-'use' => 1,
-'max_number' => 2,
-'max_size' => 2097152,
-'allowed_types' => array('.gif','.jpg','.png','.zip','.rar','.csv','.doc','.docx','.xls','.xlsx','.txt','.pdf'),
-'attachment_in_email_type' => 0,
-'direct_attachment_in_email' => 0,
-'direct_attachment_in_email_no_of_files' => 2,
-'first_x_attachments' => 2,
-'file_max_size' => 512000,
+$hesk_settings['attachments']=array (
+    'use' => 1,
+    'max_number' => 2,
+    'max_size' => 2097152,
+    'allowed_types' => array('.gif','.jpg','.png','.zip','.rar','.csv','.doc','.docx','.xls','.xlsx','.txt','.pdf'),
+    'attachment_in_email_type' => 0,
+    'direct_attachment_in_email' => 0,
+    'direct_attachment_in_email_no_of_files' => 2,
+    'first_x_attachments' => 2,
+    'file_max_size' => 512000,
 );
 
 
@@ -201,6 +206,8 @@ $hesk_settings['pop3_oauth_provider']=0;
 $hesk_settings['strip_quoted']=1;
 $hesk_settings['eml_req_msg']=0;
 $hesk_settings['save_embedded']=1;
+$hesk_settings['email_include_to']=1;
+$hesk_settings['email_include_cc']=1;
 
 // --> Ignore emails
 $hesk_settings['pipe_block_noreply']=1;
@@ -210,6 +217,7 @@ $hesk_settings['loop_hits']=5;
 $hesk_settings['loop_time']=300;
 $hesk_settings['pipe_customer_rejection_notification']=1;
 $hesk_settings['pipe_customer_rejection_email_cooldown_hours']=24;
+
 
 // --> Detect email typos
 $hesk_settings['detect_typos']=1;
@@ -230,12 +238,14 @@ $hesk_settings['open_only']=1;
 // ==> TICKET LIST
 
 $hesk_settings['ticket_list']=array('trackid','lastchange','name','subject','status','lastreplier');
+$hesk_settings['customer_ticket_list']=array('id','trackid','lastchange','subject','status');
 
 // --> Other
 $hesk_settings['submittedformat']=2;
 $hesk_settings['updatedformat']=2;
 $hesk_settings['format_submitted']='Y-m-d g:i a';
 $hesk_settings['format_updated']='Y-m-d g:i a';
+$hesk_settings['email_column']=0;
 
 
 // ==> MISC
@@ -259,10 +269,15 @@ $hesk_settings['online_min']=10;
 $hesk_settings['check_updates']=1;
 
 
+// ==> LOOK & FEEL
+$hesk_settings['customer_theme']='';
+$hesk_settings['theme_overrides']=array();
+
+
 #############################
 #     DO NOT EDIT BELOW     #
 #############################
-$hesk_settings['hesk_version']='3.6.4';
+$hesk_settings['hesk_version']='3.7.3';
 if ($hesk_settings['debug_mode'])
 {
     error_reporting(E_ALL);

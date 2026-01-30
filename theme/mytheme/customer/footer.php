@@ -1,6 +1,6 @@
 </main>
 
-<footer class="bg-emerald-900 text-emerald-100 mt-auto">
+<footer class="bg-emerald-900 text-emerald-100 mt-auto print:hidden">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
@@ -32,8 +32,8 @@
                     All rights reserved.
                 </p>
                 
-                <p class="text-[10px] mt-4 opacity-50">
-                    Powered by <a href="https://www.hesk.com" class="text-emerald-300 hover:text-white underline">HESK Help Desk Software</a>
+                <p class="mt-6 text-[10px] text-emerald-400 opacity-60 hover:opacity-100 transition-opacity">
+                    Powered by <a href="https://www.hesk.com" title="Help Desk Software">Help Desk Software</a> HESK
                 </p>
             </div>
         </div>

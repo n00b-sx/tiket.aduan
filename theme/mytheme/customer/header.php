@@ -35,11 +35,9 @@ if (!defined('IN_SCRIPT')) {die('Invalid attempt');}
         body { font-family: 'Inter', sans-serif; }
     </style>
 
-    <?php
-    // Memuat script bawaan HESK agar fungsi sistem tetap berjalan
-    // (Jangan dihapus agar validasi form tetap jalan)
-    hesk_load_core_js(); 
-    ?>
+    <script src="<?php echo HESK_PATH; ?>js/jquery-3.5.1.min.js"></script>
+    <script src="<?php echo HESK_PATH; ?>js/hesk_javascript.js"></script>
+
 </head>
 
 <body class="bg-gray-50 flex flex-col min-h-screen text-gray-800">
@@ -51,11 +49,11 @@ if (!defined('IN_SCRIPT')) {die('Invalid attempt');}
             <div class="flex items-center">
                 <a href="index.php" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 bg-emerald-700 text-white rounded-lg flex items-center justify-center font-bold text-xl shadow-md group-hover:bg-emerald-800 transition-colors">
-                        UT
+                        ULT
                     </div>
                     <div class="flex flex-col">
                         <span class="font-bold text-xl text-emerald-900 leading-tight">Helpdesk</span>
-                        <span class="text-xs text-gray-500 font-medium tracking-wide">IAIN MANADO</span>
+                        <span class="text-xs text-gray-500 font-medium tracking-wide">UPT Teknologi Informasi dan Pangkalan Data</span>
                     </div>
                 </a>
             </div>
@@ -64,8 +62,8 @@ if (!defined('IN_SCRIPT')) {die('Invalid attempt');}
                 <a href="index.php" class="text-gray-600 hover:text-emerald-700 font-medium px-3 py-2 text-sm transition-colors">
                     Beranda
                 </a>
-                <a href="https://iain-manado.ac.id" target="_blank" class="hidden md:block text-gray-600 hover:text-emerald-700 font-medium px-3 py-2 text-sm transition-colors">
-                    Web IAIN
+                <a href="https://tipd.iain-manado.ac.id" target="_blank" class="hidden md:block text-gray-600 hover:text-emerald-700 font-medium px-3 py-2 text-sm transition-colors">
+                    Web TIPD IAIN Manado
                 </a>
                 
                 <a href="index.php?a=add" class="hidden md:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-all">

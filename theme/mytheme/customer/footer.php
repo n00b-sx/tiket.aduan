@@ -1,3 +1,5 @@
+</main>
+
 <footer class="bg-emerald-900 text-emerald-100 mt-auto">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -22,12 +24,16 @@
             <div class="text-center md:text-right">
                 <div class="mb-4">
                     <span class="inline-block bg-emerald-800 rounded-lg px-3 py-1 text-xs font-semibold text-white">
-                        HESK v<?php echo $hesk_settings['hesk_version']; ?>
+                        HESK v<?php echo (isset($hesk_settings['hesk_version']) ? $hesk_settings['hesk_version'] : '3.x'); ?>
                     </span>
                 </div>
                 <p class="text-xs opacity-60">
-                    &copy; <?php echo date('Y'); ?> <?php echo $hesk_settings['hesk_title']; ?>.<br>
+                    &copy; <?php echo date('Y'); ?> <?php echo (isset($hesk_settings['hesk_title']) ? $hesk_settings['hesk_title'] : 'Help Desk'); ?>.<br>
                     All rights reserved.
+                </p>
+                
+                <p class="text-[10px] mt-4 opacity-50">
+                    Powered by <a href="https://www.hesk.com" class="text-emerald-300 hover:text-white underline">HESK Help Desk Software</a>
                 </p>
             </div>
         </div>

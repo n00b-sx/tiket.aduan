@@ -6,57 +6,81 @@ if (!defined('IN_SCRIPT')) {
 ?>
 
 <style>
-    /* Override warna footer bawaan HESK */
+    /* Override warna footer bawaan HESK agar hijau tua menyatu */
     .footer, table[style*="border-top"] {
         background-color: #064e3b !important; /* Emerald 900 */
         color: #d1fae5 !important; /* Emerald 100 */
         width: 100% !important;
         border: none !important;
-        padding: 20px 0 !important;
+        padding: 15px 0 !important;
         text-align: center !important;
+        font-size: 11px !important;
     }
     .footer a {
         color: #34d399 !important; /* Emerald 400 */
         text-decoration: none !important;
         font-weight: bold;
     }
-    /* Sembunyikan pesan error default HESK yang kurang rapi, kita ganti style di bawah */
-    .hesk_error, .hesk_notice, .hesk_info { margin-bottom: 20px; }
+    
+    /* Animasi Teks Berjalan */
+    @keyframes marquee {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 25s linear infinite;
+        padding-left: 100%;
+    }
+    .animate-marquee:hover {
+        animation-play-state: paused;
+    }
 </style>
 
-<div class="max-w-xl mx-auto px-4 py-12 min-h-[60vh]">
+<div class="w-full bg-emerald-900 text-white overflow-hidden py-3 shadow-md mb-6 relative z-10">
+    <div class="animate-marquee font-medium tracking-wide text-sm md:text-base">
+        📢 Selamat Datang di Portal Pelayanan Unit Pelayanan Terpadu Teknologi Informasi dan Pangkalan Data (UTIPD) IAIN Manado.
+        &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 
+        🕒 Jam Operasional: Senin - Jumat (08.00 - 16.00 WITA)
+    </div>
+</div>
 
-    <?php hesk_handle_messages(); ?>
+<div class="max-w-xl mx-auto px-4 py-12 min-h-[50vh]">
+
+    <div class="mb-6">
+        <?php hesk_handle_messages(); ?>
+    </div>
 
     <div class="text-center mb-8">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4">
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4 shadow-sm">
             <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
         </div>
         <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Cek Status Tiket</h1>
-        <p class="text-gray-500 mt-2">Masukkan Nomor Tiket Anda untuk melihat progres pengerjaan.</p>
+        <p class="text-gray-500 mt-2 text-sm">Pantau progres laporan akademik Anda secara realtime.</p>
     </div>
 
-    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden relative z-20">
         <div class="p-8">
             <form action="ticket.php" method="get" name="form1" id="form1" class="space-y-6">
                 
                 <div>
-                    <label for="track" class="block text-sm font-medium text-gray-700 mb-1">Nomor Tiket (Tracking ID)</label>
+                    <label for="track" class="block text-sm font-bold text-gray-700 mb-2">Nomor Tiket (Tracking ID)</label>
                     <div class="relative rounded-md shadow-sm">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <span class="text-gray-400 font-bold">#</span>
                         </div>
                         <input type="text" name="track" id="track" value="<?php echo htmlspecialchars($trackingID); ?>" 
-                               class="focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-8 py-3 sm:text-sm border-gray-300 rounded-xl bg-gray-50" 
+                               class="focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-8 py-3 sm:text-sm border border-gray-300 rounded-xl bg-gray-50 placeholder-gray-400 transition-colors" 
                                placeholder="Contoh: ABC-123-XYZZ" required>
                     </div>
                 </div>
 
                 <?php if ($hesk_settings['email_view_ticket']): ?>
                 <div>
-                    <label for="e" class="block text-sm font-medium text-gray-700 mb-1">Alamat Email</label>
+                    <label for="e" class="block text-sm font-bold text-gray-700 mb-2">Alamat Email</label>
                     <div class="relative rounded-md shadow-sm">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -64,15 +88,15 @@ if (!defined('IN_SCRIPT')) {
                             </svg>
                         </div>
                         <input type="email" name="e" id="e" value="<?php echo htmlspecialchars($email); ?>" 
-                               class="focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 py-3 sm:text-sm border-gray-300 rounded-xl bg-gray-50" 
-                               placeholder="Email yang digunakan saat melapor">
+                               class="focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 py-3 sm:text-sm border border-gray-300 rounded-xl bg-gray-50 placeholder-gray-400 transition-colors" 
+                               placeholder="Email saat melapor">
                     </div>
                 </div>
                 
                 <div class="flex items-center">
                     <input id="r" name="r" type="checkbox" value="Y" <?php if ($remember_email) {echo 'checked';} ?> 
-                           class="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded">
-                    <label for="r" class="ml-2 block text-sm text-gray-500">
+                           class="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded cursor-pointer">
+                    <label for="r" class="ml-2 block text-sm text-gray-500 cursor-pointer">
                         Ingat alamat email saya
                     </label>
                 </div>
@@ -80,12 +104,12 @@ if (!defined('IN_SCRIPT')) {
 
                 <div>
                     <button type="submit" class="w-full flex justify-center py-4 px-4 border border-transparent rounded-xl shadow-lg text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-all transform hover:-translate-y-1">
-                        LIHAT STATUS TIKET
+                        LIHAT STATUS
                     </button>
                 </div>
 
                 <div class="text-center pt-2">
-                    <a href="index.php?a=forgot_tid" class="text-sm text-emerald-600 hover:text-emerald-800 font-medium">
+                    <a href="index.php?a=forgot_tid" class="text-sm text-emerald-600 hover:text-emerald-800 font-medium underline">
                         Lupa nomor tiket Anda?
                     </a>
                 </div>
@@ -95,40 +119,62 @@ if (!defined('IN_SCRIPT')) {
         
         <div class="bg-gray-50 px-8 py-4 border-t border-gray-100 text-center">
             <p class="text-xs text-gray-500">
-                Butuh bantuan baru? <a href="index.php?a=add" class="text-emerald-700 font-bold hover:underline">Buat Aduan Disini</a>
+                Belum punya tiket? <a href="index.php?a=add" class="text-emerald-700 font-bold hover:underline">Buat Aduan Baru</a>
             </p>
         </div>
     </div>
     
-    <div class="text-center mt-8">
-         <a href="index.php" class="inline-flex items-center text-gray-500 hover:text-emerald-600 transition-colors">
+    <div class="text-center mt-8 mb-4">
+         <a href="index.php" class="inline-flex items-center text-gray-500 hover:text-emerald-600 transition-colors text-sm font-medium">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
             Kembali ke Beranda
         </a>
     </div>
 
 </div>
-<?php
-/*******************************************************************************
-The code below handles HESK licensing and must be included in the template.
 
-Removing this code is a direct violation of the HESK End User License Agreement,
-will void all support and may result in unexpected behavior.
+<div class="bg-white border-t border-gray-200 py-12 mt-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="bg-emerald-700 text-white font-bold p-2 rounded-lg">UT</div>
+                    <span class="text-xl font-bold text-gray-800">UTIPD Helpdesk</span>
+                </div>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Sistem layanan pengaduan terpadu untuk civitas akademika IAIN Manado.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-800 mb-4 uppercase text-xs tracking-wider">Hubungi Kami</h4>
+                <ul class="space-y-3 text-sm text-gray-500">
+                    <li class="flex items-start">
+                         <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span>Jl. Dr. S.H. Sarundajang, Manado</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-emerald-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span>otipd@iain-manado.ac.id</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-800 mb-4 uppercase text-xs tracking-wider">Tautan</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://iain-manado.ac.id" class="text-emerald-600 hover:underline">Website IAIN</a></li>
+                    <li><a href="https://siakad.iain-manado.ac.id" class="text-emerald-600 hover:underline">SIAKAD</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-To purchase a HESK license and support future HESK development please visit:
-https://www.hesk.com/buy.php
-*******************************************************************************/
-$hesk_settings['hesk_license']('Qo8Zm9vdGVyIGNsYXNzPSJmb290ZXIiPg0KICAgIDxwIGNsY
-XNzPSJ0ZXh0LWNlbnRlciI+UG93ZXJlZCBieSA8YSBocmVmPSJodHRwczovL3d3dy5oZXNrLmNvbSIgY
-2xhc3M9ImxpbmsiPkhlbHAgRGVzayBTb2Z0d2FyZTwvYT4gPHNwYW4gY2xhc3M9ImZvbnQtd2VpZ2h0L
-WJvbGQiPkhFU0s8L3NwYW4+PGJyPk1vcmUgSVQgZmlyZXBvd2VyPyBUcnkgPGEgaHJlZj0iaHR0cHM6L
-y93d3cuc3lzYWlkLmNvbS8/dXRtX3NvdXJjZT1IZXNrJmFtcDt1dG1fbWVkaXVtPWNwYyZhbXA7dXRtX
-2NhbXBhaWduPUhlc2tQcm9kdWN0X1RvX0hQIiBjbGFzcz0ibGluayI+U3lzQWlkPC9hPjwvcD4NCjwvZ
-m9vdGVyPg0K',"\104", "a809404e0adf9823405ee0b536e5701fb7d3c969");
-/*******************************************************************************
-END LICENSE CODE
-*******************************************************************************/
-?>
+</main>
+
 <script>
-document.getElementById('track').focus();
+// Auto focus pada input pertama saat halaman dimuat
+document.addEventListener('DOMContentLoaded', function() {
+    var trackInput = document.getElementById('track');
+    if(trackInput) { trackInput.focus(); }
+});
 </script>

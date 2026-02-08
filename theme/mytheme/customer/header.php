@@ -12,7 +12,16 @@ if (!defined('IN_SCRIPT')) {die('Invalid attempt');}
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-          theme: { extend: { colors: { emerald: { 50: '#ecfdf5', 600: '#059669', 900: '#064e3b' } } } }
+          theme: { 
+            extend: { 
+                colors: { 
+                    emerald: { 
+                        50: '#ecfdf5', 
+                        600: '#059669', 
+                        900: '#064e3b' } 
+                    } 
+                } 
+            }
         }
     </script>
 
@@ -27,8 +36,15 @@ if (!defined('IN_SCRIPT')) {die('Invalid attempt');}
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-20">
             <div class="flex items-center">
-                <a href="index.php" class="flex items-center gap-3 font-bold text-xl text-emerald-900">
-                    <span class="bg-emerald-700 text-white px-2 py-1 rounded">ULT</span> Teknologi Informasi dan Pangkalan Data
+                <a href="index.php" class="flex items-center gap-3 group">
+                    <img src="<?php echo HESK_PATH; ?>theme/mytheme/customer/img/logo-tipd.png" 
+                        alt="Logo UTIPD" 
+                        class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                    
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl text-emerald-900 leading-tight">Helpdesk</span>
+                        <span class="text-xs text-gray-500 font-medium tracking-wide">UPT TIPD</span>
+                    </div>
                 </a>
             </div>
             <div class="flex items-center space-x-4">

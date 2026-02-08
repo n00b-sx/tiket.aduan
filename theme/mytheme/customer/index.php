@@ -6,7 +6,7 @@ if (!defined('IN_SCRIPT')) {
     die();
 }
 
-// 1. Memuat Custom Header (yang ada Tailwind-nya)
+// 1. Memuat Custom Header
 require_once(__DIR__ . '/header.php');
 ?>
 
@@ -26,29 +26,27 @@ require_once(__DIR__ . '/header.php');
         animation-play-state: paused;
     }
 
-    /* --- TRIK RAHASIA --- */
-    /* Kita paksa footer asli HESK agar mengikuti gaya Tailwind kita */
-    /* Biasanya footer HESK memiliki class .footer atau tabel di bawah */
+    /* --- CSS OVERRIDE UNTUK FOOTER HESK ASLI --- */
+    /* Kita sembunyikan border dan atur warna footer asli (lisensi) agar menyatu */
     .footer, table[style*="border-top"] {
         background-color: #064e3b !important; /* Emerald 900 */
-        color: #d1fae5 !important; /* Emerald 100 */
+        color: #6ee7b7 !important; /* Emerald 300 */
         width: 100% !important;
         border: none !important;
-        padding: 20px 0 !important;
+        padding: 15px 0 !important;
         text-align: center !important;
+        font-size: 11px !important;
     }
-    
-    /* Mengubah warna link 'Powered by' menjadi hijau terang */
     .footer a {
-        color: #34d399 !important; /* Emerald 400 */
-        text-decoration: none !important;
-        font-weight: bold;
+        color: #fff !important;
+        text-decoration: underline !important;
+        opacity: 0.8;
     }
 </style>
 
 <div class="w-full bg-emerald-900 text-white overflow-hidden py-3 shadow-md mb-6 relative z-10">
     <div class="animate-marquee font-medium tracking-wide text-sm md:text-base">
-        📢 Selamat Datang di Portal Pelayanan Unit Pelayanan Terpadu Teknologi Informasi dan Pangkalan Data (TIPD) IAIN Manado. Kami siap melayani kebutuhan akademik Anda. 
+        📢 Selamat Datang di Portal Pelayanan Unit Pelayanan Terpadu Teknologi Informasi dan Pangkalan Data (UTIPD) IAIN Manado. Kami siap melayani kebutuhan akademik Anda. 
         &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 
         🕒 Jam Operasional: Senin - Jumat (08.00 - 16.00 WITA)
     </div>
@@ -73,7 +71,7 @@ require_once(__DIR__ . '/header.php');
 
     <div class="text-center py-10">
         <h1 class="text-4xl md:text-5xl font-extrabold text-emerald-900 mb-4 tracking-tight">
-            Portal Pelayanan Terpadu
+            Pusat Bantuan Akademik
         </h1>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
             Unit Pelayanan Terpadu Teknologi Informasi dan Pangkalan Data<br>
@@ -94,7 +92,7 @@ require_once(__DIR__ . '/header.php');
             </div>
         </a>
 
-        <a href="view.php" class="group relative block p-8 bg-white border border-gray-200 rounded-3xl shadow-xl hover:shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+        <a href="ticket.php" class="group relative block p-8 bg-white border border-gray-200 rounded-3xl shadow-xl hover:shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
             <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-50 rounded-full group-hover:bg-blue-100 transition-colors"></div>
             <div class="relative flex flex-col items-center text-center">
                 <div class="p-5 bg-blue-600 text-white rounded-2xl shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -107,22 +105,72 @@ require_once(__DIR__ . '/header.php');
     </div>
 
     <?php if ($hesk_settings['kb_enable']): ?>
-    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 border border-gray-200">
+    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 border border-gray-200 mb-12">
         <h2 class="text-2xl font-bold text-gray-800 mb-6">Pusat Pengetahuan</h2>
         <div class="mb-8">
             <form action="knowledgebase.php" method="get" class="relative">
                 <input type="text" name="search" class="w-full pl-4 pr-12 py-3 rounded-xl border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="Cari solusi...">
-                <button type="submit" class="absolute right-4 top-3 text-emerald-600">CARI</button>
+                <button type="submit" class="absolute right-4 top-3 text-emerald-600 font-bold">CARI</button>
             </form>
         </div>
     </div>
     <?php endif; ?>
 
 </div>
+
+<div class="bg-white border-t border-gray-200 py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                <a href="index.php" class="flex items-center gap-3 group">
+                    <img src="<?php echo HESK_PATH; ?>theme/mytheme/customer/img/logo-tipd.png" 
+                        alt="Logo UTIPD" 
+                        class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                    
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl text-emerald-900 leading-tight">Helpdesk</span>
+                        <span class="text-xs text-gray-500 font-medium tracking-wide">UPT TIPD</span>
+                    </div>
+                </a>
+                </div>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Sistem layanan pengaduan terpadu untuk civitas akademika IAIN Manado. Kami berdedikasi memberikan solusi teknologi terbaik.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-gray-800 mb-4 uppercase text-xs tracking-wider">Hubungi Kami</h4>
+                <ul class="space-y-3 text-sm text-gray-500">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span>Jl. Dr. S.H. Sarundajang Kawasan Ring Road I, Manado</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-emerald-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span>tipd@iain-manado.ac.id</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-gray-800 mb-4 uppercase text-xs tracking-wider">Tautan Cepat</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://tipd.iain-manado.ac.id" class="text-emerald-600 hover:text-emerald-800 transition-colors">Website TIPD IAIN Manado</a></li>
+                    <li><a href="https://siska.iain-manado.ac.id/" class="text-emerald-600 hover:text-emerald-800 transition-colors">SIAKAD Terpadu</a></li>
+                    <li><a href="knowledgebase.php" class="text-emerald-600 hover:text-emerald-800 transition-colors">FAQ / Panduan</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
 </main>
 
 <?php
-// 4. MEMANGGIL FOOTER ASLI (CORE)
-// Ini adalah kunci agar pesan 'Unlicensed' hilang
+// 5. FOOTER ASLI SISTEM (Wajib Ada)
+// CSS di atas akan mengubah warnanya jadi hijau tua agar "seamless"
 require_once(HESK_PATH . 'inc/footer.inc.php');
 ?>
